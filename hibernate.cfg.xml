@@ -1,0 +1,38 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	
+	<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+           org.hibernate.dialect.MySQLDialect
+      </property>
+      
+      <property name = "hibernate.connection.driver_class">
+        	com.mysql.jdbc.Driver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      
+      <property name = "hibernate.connection.url">
+         jdbc:mysql://localhost:3306/news_hunt
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         root
+      </property>
+      
+      <property name = "hibernate.connection.password">
+         rootroot
+      </property>
+      <property name="hibrenate.hbm2ddl.auto">update</property>
+      <!-- List of XML mapping files -->
+      <mapping class = "com.newshunt.daomodel.signup"/>
+      <mapping class = "com.newshunt.daomodel.MenuDao"/>
+      <mapping class = "com.newshunt.daomodel.ChannelListDao"/>
+      <mapping class = "com.newshunt.daomodel.FeedbackDao"/>
+      <mapping class = "com.newshunt.daomodel.AdminMenuDao"/>
+   </session-factory>
+</hibernate-configuration>
